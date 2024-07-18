@@ -1,5 +1,5 @@
 <?php
-phpinfo();
+
 
 if (isset($_GET['url'])) {
     // 使用 URL 参数
