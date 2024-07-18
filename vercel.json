@@ -1,16 +1,21 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "public/index.php",
-      "use": "@vercel-php/apache",
-      "config": { "phpVersion": "8.0" }
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.4.0"
     }
-  ],
+  },
   "routes": [
     {
+      "src": "/(static|admin)/(.*)",
+      "dest": "public/$1/$2"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "public/favicon.ico"
+    },
+    {
       "src": "/(.*)",
-      "dest": "public/index.php"
+      "dest": "/api/index.php"
     }
   ]
 }
