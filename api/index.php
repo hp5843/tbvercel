@@ -25,3 +25,4 @@ function apijm($url){
 	curl_close($curl);
 	return json(json_decode($response, true));
 }
+?>
